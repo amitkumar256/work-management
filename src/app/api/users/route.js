@@ -4,15 +4,20 @@ import { User } from "@/models/user";
 
 connectDb();
 
-export function GET(request){
-    const users=[
-        {
-            name:"amit kumar",
-            phone:"8757",
-            course:"java"
-        }
-    ];
-    return NextResponse.json(users);
+export async function GET(request){
+  let users=[]
+  try{
+    users= await User.find();
+
+  }catch(error){
+    console.log(error);
+    return NextResponse.json({
+        message:"failed to get users",
+        success:false,
+    });
+
+  }
+  return NextResponse.json(users);1
 }
 export async function POST(request){
     const {name,email,password,about,profileURL}=await request.json()

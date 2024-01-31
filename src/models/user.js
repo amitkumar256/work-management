@@ -10,4 +10,4 @@ const UserSchema = new Schema({
     about:String,
     profileURL:String,
 });
-export const User =mongoose.models.users || mongoose.model("users",UserSchema);
+export const User = mongoose.models.users || mongoose.model("users",UserSchema);
