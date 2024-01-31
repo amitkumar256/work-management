@@ -43,7 +43,7 @@ export async function DELETE(request,{params}){
         return getResponseMessage("Task Deleted !!",200,true);
     }catch(error){
         console.log(error);
-        return getResponseMessage("error in deleting",500,false);
+        return getResponseMessage("error in deleting task",500,false);
     }
 
 }
