@@ -3,10 +3,10 @@ import { User } from "@/models/user";
 import { NextResponse } from "next/server";
 
 export async function GET(request,{params}){
-    const userId = params.userid;
-    console.log("userid "+ userId);
+    const {userid} = params;
+    console.log("userid "+ userid);
 
-    const user = await User.findById(userId)
+    const user = await User.findById(userid)
     return NextResponse.json(user);
 }
 
