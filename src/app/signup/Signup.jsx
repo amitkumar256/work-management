@@ -31,12 +31,27 @@ const Signup = () => {
       toast.success("user is registered", {
         position: "top-center",
       });
-    } catch {
-      console.log(error);
-      toast.error("signup error", {
+      setData({
+        name: "",
+        email: "",
+        password: "",
+        about: "",
+      });
+    } catch (error) {
+      console.log(error.response.data.message);
+
+      toast.error("Signup error ", +error.response.data.message, {
         position: "top-center",
       });
     }
+  };
+  const resetForm = () => {
+    setData({
+      name: "",
+      email: "",
+      password: "",
+      about: "",
+    });
   };
   return (
     <div className="grid grid-cols-12">
@@ -150,7 +165,10 @@ const Signup = () => {
               >
                 Sign up
               </button>
-              <button className="px-2 py-3 rounded bg-orange-700 ms-3 hover:bg-orange-400">
+              <button
+                onClick={resetForm}
+                className="px-2 py-3 rounded bg-orange-700 ms-3 hover:bg-orange-400"
+              >
                 reset
               </button>
             </div>
