@@ -4,7 +4,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="h-40 bg-blue-500 ">
-      <div>
+      <div className="flex justify-around">
         <div>
           <h1>welcome to footer</h1>
           <p>this is footer section</p>
