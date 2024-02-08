@@ -27,7 +27,7 @@ const CustomNavbar = () => {
       <div>
         <ul className="flex space-x-2">
           <li>
-            <a href="">Login</a>
+            <Link href="/login">Login</Link>
           </li>
           <li>
             <Link href="/signup">SignUp</Link>
