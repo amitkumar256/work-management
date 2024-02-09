@@ -1,6 +1,7 @@
 import { connectDb } from "@/helper/db";
 import { NextResponse } from "next/server";
 import { User } from "@/models/user";
+import bcrypt from "bcryptjs";
 
 connectDb();
 
@@ -25,6 +26,9 @@ export async function POST(request){
         name,email,password,about,profileURL,
     });
     try{
+      user.password= bcrypt.hashSync(user.password,
+       parseInt( process.env.BCRYPT_SALT));
+      console.log(user);
     const createdUser=await user.save();
     const response =NextResponse.json(user,{
         status:201,
