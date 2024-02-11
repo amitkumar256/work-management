@@ -20,7 +20,7 @@ const CustomNavbar = () => {
             <Link href="/add-task">Add Task</Link>
           </li>
           <li>
-            <Link href="/show-task">Show Tasks</Link>
+            <Link href="/show-tasks">Show Tasks</Link>
           </li>
         </ul>
       </div>
