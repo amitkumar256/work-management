@@ -4,3 +4,9 @@ const result = await httpAxios.post("/api/users",user).then((response)=>response
 return result;
 
 } 
+
+export async function login(loginData){
+    const result = await httpAxios.post("/api/login",loginData).then((response)=>response.data);
+    return result;
+    
+    } 
