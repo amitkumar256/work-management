@@ -39,6 +39,7 @@ console.log(user)
 console.log(token) 
 return response;
 }catch(error){
+    console.log(error)
 return NextResponse.json({
     message:error.message,
     success:false,
