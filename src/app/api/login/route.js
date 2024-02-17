@@ -26,12 +26,13 @@ if(!matched){
 // 3.generate token
 const token = jwt.sign({
     _id:user._id,
-    name:user.name
+    name:user.name,
 
 },process.env.JWT_KEY);
 const response =NextResponse.json({
     message:"login success",
-    success:true
+    success:true,
+    user:user
 })
 response.cookies.set("authToken",token,{
     expiresIn:"1d",

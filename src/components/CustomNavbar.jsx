@@ -2,9 +2,20 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import UserContext from "@/context/userContext";
+import { logout } from "@/services/userService";
 
 const CustomNavbar = () => {
   const context = useContext(UserContext);
+  async function doLogout() {
+    try {
+      const result = await logout();
+      console.log(result);
+      context.setUser(undefined);
+    } catch (error) {
+      console.log(error);
+      toast.error("logout error");
+    }
+  }
 
   return (
     <nav className="bg-blue-500 h-16 py-2 px-36 flex justify-between items-center">
@@ -40,7 +51,7 @@ const CustomNavbar = () => {
                 <Link href={"#"}>{context.user.name}</Link>
               </li>
               <li>
-                <Link href={"#"}>logOut</Link>
+                <button onClick={doLogout}>logOut</button>
               </li>
             </>
           )}
