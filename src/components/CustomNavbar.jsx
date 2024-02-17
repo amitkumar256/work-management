@@ -3,14 +3,17 @@ import React, { useContext } from "react";
 import Link from "next/link";
 import UserContext from "@/context/userContext";
 import { logout } from "@/services/userService";
+import { useRouter } from "next/navigation";
 
 const CustomNavbar = () => {
   const context = useContext(UserContext);
+  const router = useRouter();
   async function doLogout() {
     try {
       const result = await logout();
       console.log(result);
       context.setUser(undefined);
+      router.push("/");
     } catch (error) {
       console.log(error);
       toast.error("logout error");

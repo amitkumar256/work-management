@@ -19,6 +19,17 @@ request.nextUrl.pathname === "/login" ||
  }
  else{
     if(!authToken){
+      if(request.nextUrl.pathname.startsWith("/api")){
+        return new NextResponse.json(
+          {
+            message:"Access denied",
+            success:false,
+          },
+          {
+            status:401,
+          }
+        )
+      }
         return  NextResponse.redirect(new URL("/login",request.url));
     }
  }
