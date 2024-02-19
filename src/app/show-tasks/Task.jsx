@@ -1,5 +1,6 @@
 import UserContext from "@/context/userContext";
 import React, { useContext } from "react";
+import { RxCross1 } from "react-icons/rx";
 
 const Task = ({ task }) => {
   const { user } = useContext(UserContext);
@@ -10,7 +11,13 @@ const Task = ({ task }) => {
       }`}
     >
       <div className="  p-5">
-        <h1 className="text-2xl font-medium">{task.title}</h1>
+        <div className="flex justify-between">
+          <h1 className="text-2xl font-medium">{task.title}</h1>
+          <span className="cursor-pointer">
+            <RxCross1 />
+          </span>
+        </div>
+
         <p className=" font-serif">{task.content}</p>
         <p className="text-right">
           <b>Author:{user?.name}</b>
