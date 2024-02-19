@@ -1,7 +1,7 @@
 import { getResponseMessage } from "@/helper/responseMessage";
 import { Task } from "@/models/task"
 import { NextResponse } from "next/server";
-
+import { connectDb } from "@/helper/db";
 export async function GET(request,{params}){
 
     const userId =params.userid
@@ -9,6 +9,8 @@ export async function GET(request,{params}){
     console.log(userId);
 
     try{
+        await connectDb();
+
 const tasks = await Task.find({
     userId:userId,
 });

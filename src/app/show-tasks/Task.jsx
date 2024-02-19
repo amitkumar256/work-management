@@ -2,8 +2,12 @@ import UserContext from "@/context/userContext";
 import React, { useContext } from "react";
 import { RxCross1 } from "react-icons/rx";
 
-const Task = ({ task }) => {
+const Task = ({ task, deleteTaskParent }) => {
   const { user } = useContext(UserContext);
+  function deleteTask(taskId) {
+    deleteTaskParent(taskId);
+  }
+
   return (
     <div
       className={`p-2   rounded-md mt-2 ${
@@ -13,7 +17,12 @@ const Task = ({ task }) => {
       <div className="  p-5">
         <div className="flex justify-between">
           <h1 className="text-2xl font-medium">{task.title}</h1>
-          <span className="cursor-pointer">
+          <span
+            onClick={() => {
+              deleteTask(task._id);
+            }}
+            className="cursor-pointer"
+          >
             <RxCross1 />
           </span>
         </div>

@@ -3,11 +3,13 @@ import { getResponseMessage } from "@/helper/responseMessage";
 import { Task } from "@/models/task";
 import { NextResponse } from "next/server";
 
-connectDb();
+// await connectDb();
 
 export async function GET(request,{params}){
     const taskId = params.taskid;
     try{
+        await connectDb();
+
        const task =await Task.findById(taskId);
        return NextResponse.json(task);
     }catch(error){
@@ -25,6 +27,8 @@ export async function PUT(request,{params}){
         (task.title = title),
         (task.content=content),
         (task.status=status);
+        await connectDb();
+
         const updatedTask = await task.save();
 return NextResponse.json(updatedTask);
     }catch(error){
@@ -36,6 +40,7 @@ return NextResponse.json(updatedTask);
 }
 export async function DELETE(request,{params}){
     const taskId = params.taskid;
+    await connectDb();
 
     try{
         await Task.deleteOne({
