@@ -1,4 +1,5 @@
 "use client";
+
 import UserContext from "@/context/userContext";
 import { deleteTask, getTasksOfUser } from "@/services/taskService";
 import React, { useContext, useEffect, useState } from "react";
@@ -34,8 +35,8 @@ const ShowTasks = () => {
     }
   }
   return (
-    <div classNam="grid grid-cols-12 ">
-      <div className=" col-span-6 col-start-4">
+    <div className="lg:max-w-[1280px] lg:mx-auto mx-2 ">
+      <div>
         <h1 className="text-3xl text-center">your tasks({tasks.length})</h1>
         {tasks.map((task) => (
           <Task
@@ -43,10 +44,23 @@ const ShowTasks = () => {
             key={task._id}
             deleteTaskParent={deleteTaskParent}
           />
-        ))}
+        ))}{" "}
       </div>
     </div>
   );
 };
 
 export default ShowTasks;
+
+{
+  /* <div className=" ">
+<h1 className="text-3xl text-center">your tasks({tasks.length})</h1>
+{tasks.map((task) => (
+  <Task
+    task={task}
+    key={task._id}
+    deleteTaskParent={deleteTaskParent}
+  />
+))}
+</div> */
+}
