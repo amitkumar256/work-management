@@ -1,3 +1,4 @@
+import Front from "@/components/Front";
 import Image from "next/image";
 export const metadata = {
   title: "Home : Work Manager",
@@ -6,7 +7,7 @@ export const metadata = {
 export default function Home() {
   return (
     <div>
-      <h1 className="text-5xl">welcome to work manager </h1>
+      <Front/>
     </div>
   );
 }
