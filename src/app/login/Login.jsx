@@ -34,6 +34,12 @@ const Login = () => {
       });
     }
   };
+  const resetForm = () => {
+    setLoginData({
+      email: "",
+      password: "",
+    });
+  };
   return (
     <div className="" style={{ backgroundImage: "url('background.jpg')" }}>
       <div className=" flex flex-col justify-center items-center">
@@ -91,12 +97,12 @@ const Login = () => {
               <div className=" mt-5 text-center">
                 <button
                   type="submit"
-                  className="px-3 py-3 rounded bg-green-700 hover:bg-green-400"
+                  className="px-3 py-3 rounded bg-green-500 hover:bg-green-800"
                 >
                   Log in
                 </button>
                 <button
-                  // onClick={resetForm}
+                  onClick={resetForm}
                   className="px-3 py-3 rounded bg-orange-700 ms-3 hover:bg-orange-400"
                 >
                   reset
