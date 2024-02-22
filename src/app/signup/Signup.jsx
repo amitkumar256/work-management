@@ -55,7 +55,7 @@ const Signup = () => {
   };
   return (
     <div className="" style={{ backgroundImage: "url('background.jpg')" }}>
-      <div className=" flex flex-col justify-center items-center">
+      <div className=" flex flex-col justify-center items-center pb-2">
         <div className="flex justify-center mx-5 my-8">
           <Image className="h-[60vh] w-4/5" src={signup} alt="signup img" />
         </div>
