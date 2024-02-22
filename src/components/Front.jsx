@@ -6,7 +6,10 @@ import Image from "next/image";
 const Front = () => {
   const { user } = useContext(UserContext);
   return (
-    <div className="lg:max-w-[1280px] lg:mx-auto mx-2">
+    <div
+      className="lg:max-w-[1280px] lg:mx-auto mx-2"
+      style={{ backgroundImage: "url('background1.jpg')" }}
+    >
       <div className="flex justify-center my-4">
         <h1 className="text-2xl font-semibold text-orange-600">
           "Effortless Task Management Starts Here: Just Add, We'll Manage."

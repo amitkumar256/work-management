@@ -54,19 +54,12 @@ const Signup = () => {
     });
   };
   return (
-    <div className="grid grid-cols-12">
-      <div className="col-span-4 col-start-5 ">
-        <div className="py-5 flex-row justify-center items-center">
-          <div className="flex justify-center mx-5 my-8">
-            <Image
-              src={signup}
-              alt="signup img"
-              style={{
-                width: "50%",
-              }}
-            />
-          </div>
-
+    <div className="" style={{ backgroundImage: "url('background.jpg')" }}>
+      <div className=" flex flex-col justify-center items-center">
+        <div className="flex justify-center mx-5 my-8">
+          <Image className="h-[60vh] w-4/5" src={signup} alt="signup img" />
+        </div>
+        <div className="md:w-3/5 text-white">
           <h1 className="text-3xl text-center">SignUp Here</h1>
 
           <form action="" className="mt-5" onSubmit={doSignup}>
