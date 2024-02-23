@@ -151,7 +151,7 @@ const Signup = () => {
                 value={data.about}
               ></textarea>
             </div>
-            <div className="text-center">
+            <div className="text-center py-5">
               <button
                 type="submit"
                 className="px-2 py-3 rounded bg-green-700 hover:bg-green-400"

@@ -94,7 +94,7 @@ const Login = () => {
                   value={loginData.password}
                 />
               </div>
-              <div className=" mt-5 text-center">
+              <div className=" mt-5 text-center py-5">
                 <button
                   type="submit"
                   className="px-3 py-3 rounded bg-green-500 hover:bg-green-800"
