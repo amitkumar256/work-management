@@ -21,55 +21,57 @@ const CustomNavbar = () => {
   }
 
   return (
-    <nav className="bg-black h-20  px-36 flex justify-between items-center text-red-600 text-2xl">
-      <div className="brand">
-        <h1>
-          <a href="#">Work Manager</a>
-        </h1>
-      </div>
-      <div>
-        <ul className="flex space-x-5">
-          {context.user && (
-            <>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
+    <nav className="  bg-black h-20   text-red-600 text-2xl">
+      <div className="  h-20 flex justify-between items-center  max-w-[1280px] lg:mx-auto mx-4 brand">
+        <div>
+          <h1>
+            <a href="#">Work Manager</a>
+          </h1>
+        </div>
+        <div className="hidden lg:block">
+          <ul className="flex space-x-5">
+            {context.user && (
+              <>
+                <li>
+                  <Link href="/">Home</Link>
+                </li>
 
-              <li>
-                <Link href="/add-task">Add Task</Link>
-              </li>
-              <li>
-                <Link href="/show-tasks">Show Tasks</Link>
-              </li>
-            </>
-          )}
-        </ul>
-      </div>
-      <div>
-        <ul className="flex space-x-2">
-          {context.user && (
-            <>
-              {" "}
-              <li>
-                <Link href={"#"}>{context.user.name}</Link>
-              </li>
-              <li>
-                <button onClick={doLogout}>logOut</button>
-              </li>
-            </>
-          )}
-          {!context.user && (
-            <>
-              {" "}
-              <li>
-                <Link href="/login">Login</Link>
-              </li>
-              <li>
-                <Link href="/signup">SignUp</Link>
-              </li>
-            </>
-          )}
-        </ul>
+                <li>
+                  <Link href="/add-task">Add Task</Link>
+                </li>
+                <li>
+                  <Link href="/show-tasks">Show Tasks</Link>
+                </li>
+              </>
+            )}
+          </ul>
+        </div>
+        <div>
+          <ul className="flex space-x-2">
+            {context.user && (
+              <>
+                {" "}
+                <li>
+                  <Link href={"#"}>{context.user.name}</Link>
+                </li>
+                <li>
+                  <button onClick={doLogout}>logOut</button>
+                </li>
+              </>
+            )}
+            {!context.user && (
+              <>
+                {" "}
+                <li>
+                  <Link href="/login">Login</Link>
+                </li>
+                <li>
+                  <Link href="/signup">SignUp</Link>
+                </li>
+              </>
+            )}
+          </ul>
+        </div>
       </div>
     </nav>
   );
