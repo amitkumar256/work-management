@@ -46,7 +46,7 @@ const Login = () => {
         <div className="pt-2 pl-5">
           <img className="h-[60vh] w-4/5" src="log.svg" alt="" />
         </div>
-        <div className="md:w-3/5">
+        <div className="md:w-2/5">
           <div className="pb-2 ">
             <h1 className="text-3xl text-center text-white">Login Here</h1>
             <form onSubmit={loginFormSubmitted}>
