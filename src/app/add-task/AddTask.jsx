@@ -31,14 +31,14 @@ const AddTask = () => {
     }
   };
   return (
-    <div className="grid grid-cols-12  ">
-      <div className=" col-span-4  col-start-5 shadow-sm p-5">
-        <div className="my-8 flex justify-center">
+    <div className="">
+      <div className=" flex flex-col justify-center items-center p-5">
+        <div className="my-8 lg:w-2/5">
           <Image src={login} alt="imge" />
         </div>
         <h1 className="text-2xl text-center">Add your task here!!</h1>
-        <form action="" onSubmit={handleAddTask}>
-          <div className="mt-4">
+        <form className="lg:w-2/5" action="" onSubmit={handleAddTask}>
+          <div className="mt-4 ">
             <label htmlFor="task_title" className="block text-sm font-medium">
               Title
             </label>
@@ -107,7 +107,7 @@ const AddTask = () => {
             </button>
           </div>
 
-          {JSON.stringify(task)}
+          {/* {JSON.stringify(task)} */}
         </form>
       </div>
     </div>

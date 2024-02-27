@@ -86,90 +86,92 @@ const CustomNavbar = () => {
                 </li>
               </>
             )}
-            <div className="lg:hidden">
-              <nav className={`  `}>
-                <button
-                  onClick={() => setIsOpen(!isOpen)}
-                  type="button"
-                  className="mobileNavbar  relative z-[100]  "
-                >
-                  <div className={`h-3.5 w-5 `}>
-                    <div
-                      className={` h-0.5   w-5 origin-top-left ease-in duration-200 rounded-md ${
-                        isOpen
-                          ? "rotate-45 translate-x-px bg-white"
-                          : "rotate-0 bg-white"
-                      }`}
-                    />
-                    <div
-                      className={` h-0.5 w-5 bg-white ease-in duration-200 rounded-md mt-1 ${
-                        isOpen ? "hidden" : "block"
-                      }`}
-                    />
-                    <div
-                      className={` h-0.5 w-5  ease-in duration-200  rounded-md mt-1  ${
-                        isOpen
-                          ? "-rotate-45 -translate-x-0.5 bg-white"
-                          : "rotate-0 bg-white"
-                      }`}
-                    />
-                  </div>
-                </button>
-                {isOpen && (
-                  <AnimatePresence>
-                    <motion.div
-                      variants={fadeIn}
-                      initial="initial"
-                      whileInView="animate"
-                      exit="exit"
-                      viewport={{ once: false }}
-                      className="fixed ease-in duration-800  w-full h-screen top-0 right-0 bg-gradient-to-r from-orange-400 to-red-600  py-1 px-1 shadow-lg bg-black text-white z-50"
-                    >
-                      <div className=" w-full h-full bg-black">
-                        <div className="flex flex-col h-full  content-between">
-                          <div className="flex flex-col mx-auto mt-20 text-center font-oswald tracking-light w-10/12 z-20">
-                            <div className="nav-link-container  py-2  border-b-2 border-white ">
-                              <a href="/" className="nav-link font-serif ">
-                                Home
-                              </a>
-                            </div>
-                            <div
-                              onClick={() => setIsOpen(!isOpen)}
-                              className="nav-link-container py-4  border-b-2 border-white"
-                            >
-                              <a
-                                href="/add-task"
-                                className="nav-link font-serif"
+            {context.user && (
+              <div className="lg:hidden">
+                <nav className={`  `}>
+                  <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    type="button"
+                    className="mobileNavbar  relative z-[100]  "
+                  >
+                    <div className={`h-3.5 w-5 `}>
+                      <div
+                        className={` h-0.5   w-5 origin-top-left ease-in duration-200 rounded-md ${
+                          isOpen
+                            ? "rotate-45 translate-x-px bg-white"
+                            : "rotate-0 bg-white"
+                        }`}
+                      />
+                      <div
+                        className={` h-0.5 w-5 bg-white ease-in duration-200 rounded-md mt-1 ${
+                          isOpen ? "hidden" : "block"
+                        }`}
+                      />
+                      <div
+                        className={` h-0.5 w-5  ease-in duration-200  rounded-md mt-1  ${
+                          isOpen
+                            ? "-rotate-45 -translate-x-0.5 bg-white"
+                            : "rotate-0 bg-white"
+                        }`}
+                      />
+                    </div>
+                  </button>
+                  {isOpen && (
+                    <AnimatePresence>
+                      <motion.div
+                        variants={fadeIn}
+                        initial="initial"
+                        whileInView="animate"
+                        exit="exit"
+                        viewport={{ once: false }}
+                        className="fixed ease-in duration-800  w-full h-screen top-0 right-0 bg-gradient-to-r from-orange-400 to-red-600  py-1 px-1 shadow-lg bg-black text-white z-50"
+                      >
+                        <div className=" w-full h-full bg-black">
+                          <div className="flex flex-col h-full  content-between">
+                            <div className="flex flex-col mx-auto mt-20 text-center font-oswald tracking-light w-10/12 z-20">
+                              <div className="nav-link-container  py-2  border-b-2 border-white ">
+                                <a href="/" className="nav-link font-serif ">
+                                  Home
+                                </a>
+                              </div>
+                              <div
+                                onClick={() => setIsOpen(!isOpen)}
+                                className="nav-link-container py-4  border-b-2 border-white"
                               >
-                                Add Task
-                              </a>
-                            </div>
+                                <a
+                                  href="/add-task"
+                                  className="nav-link font-serif"
+                                >
+                                  Add Task
+                                </a>
+                              </div>
 
-                            <div
-                              onClick={() => setIsOpen(!isOpen)}
-                              className="nav-link-container py-4  border-b-2 border-white "
-                            >
-                              <a
-                                href="show-tasks"
-                                className="nav-link font-serif"
+                              <div
+                                onClick={() => setIsOpen(!isOpen)}
+                                className="nav-link-container py-4  border-b-2 border-white "
                               >
-                                Show-tasks
-                              </a>
-                            </div>
-                            <div
-                              onClick={() => setIsOpen(!isOpen)}
-                              className="nav-link-container  border-b-2 border-white py-4   "
-                            >
-                              <button onClick={doLogout}>logOut</button>
+                                <a
+                                  href="show-tasks"
+                                  className="nav-link font-serif"
+                                >
+                                  Show-tasks
+                                </a>
+                              </div>
+                              <div
+                                onClick={() => setIsOpen(!isOpen)}
+                                className="nav-link-container  border-b-2 border-white py-4   "
+                              >
+                                <button onClick={doLogout}>logOut</button>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
-                )}
-              </nav>{" "}
-            </div>
+                      </motion.div>
+                    </AnimatePresence>
+                  )}
+                </nav>{" "}
+              </div>
+            )}
           </ul>
         </div>
       </div>
